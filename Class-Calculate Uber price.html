@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Uber price</title>
+</head>
+<body>
+    <script>
+        //create uberprice class
+        class UberPrice{
+            distance;
+            type;
+            minFare;
+            baseFare;
+            perDistance;
+            
+            constructor(distance,type){
+                this.distance=distance
+                this.type=type
+            }
+
+            //based on the type of the car, base fare, minimum fare and fare per distance changes
+            //For example, let's assume...
+            //For type X(UberX), baseFare=Rs.25, minFare=Rs.75, perDistance=Rs.6
+            //For type S(SUV), baseFare=Rs.40, minFare=Rs.125, perDistance=Rs.12
+            //For type L(Luxury), baseFare=Rs.55, minFare=Rs.200, perDistance=Rs.20
+            //If price is less than minimum fare then price=minFare
+
+            getPrice(){
+                let price;
+                if(this.type=="X"){
+                    this.baseFare=25
+                    this.minFare=75
+                    this.perDistance=6
+                    price=this.baseFare+(this.distance*this.perDistance)
+                    if(price<this.minFare){
+                        price=this.minFare
+                    }
+                    return (`Price for the distance of ${this.distance} in UberX is ${price}`)
+                }
+                if(this.type=="S"){
+                    this.baseFare=40
+                    this.minFare=125
+                    this.perDistance=12
+                    price=this.baseFare+(this.distance*this.perDistance)
+                    if(price<this.minFare){
+                        price=this.minFare
+                    }
+                    return (`Price for the distance of ${this.distance} in Uber SUV is ${price}`)
+                }
+                if(this.type=="L"){
+                    this.baseFare=55
+                    this.minFare=200
+                    this.perDistance=20
+                    price=this.baseFare+(this.distance*this.perDistance)
+                    if(price<this.minFare){
+                        price=this.minFare
+                    }
+                    return (`Price for the distance of ${this.distance} in Uber Luxury is ${price}`)
+                }
+            }
+        }
+
+        let customer1=new UberPrice(10,"X")
+        let customer2=new UberPrice(10,"S")
+        let customer3=new UberPrice(10,"L")
+
+        console.log(customer1.getPrice())
+        console.log(customer2.getPrice())
+        console.log(customer3.getPrice())
+    </script>
+</body>
+</html>

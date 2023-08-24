@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class-Circle</title>
+</head>
+<body>
+    <script>
+        //circle class
+        class Circle{
+            radius;
+            color;
+
+            /*constructor(){
+                var radius=1
+                var color="Red"
+            }
+            constructor(radius){
+                this.radius=radius
+                var color="Red"
+            }*/
+            constructor(radius=1,color="Red"){
+                this.radius=radius
+                this.color=color
+            }
+            getRadius(){
+                return this.radius
+            }
+            setRadius(radius){
+                this.radius=radius
+            }
+            getColor(){
+                return this.color
+            }
+            setColor(color){
+                this.color=color
+            }
+            toString(){
+                let str=(`Circle[radius=${this.radius},color=${this.color}]`)
+                return str
+            }
+            getArea(){
+                let area=Math.PI*this.radius*this.radius
+                return area
+            }
+            getCircumference(){
+                let circum=Math.PI*2*this.radius
+                return circum
+            }
+
+        }
+
+        let c1=new Circle()
+        let c2=new Circle(2)
+        let c3=new Circle(3,"Blue")
+
+        console.log(c1)
+        console.log(c2)
+        console.log(c3)
+
+        console.log(c1.getRadius())
+        console.log(c2.getRadius())
+        console.log(c3.getRadius())
+
+        c1.setRadius(4)
+        c2.setRadius(5)
+        c3.setRadius(6)
+
+        console.log(c1.getColor())
+        console.log(c2.getColor())
+        console.log(c3.getColor())
+
+        c1.setColor("Black")
+        c2.setColor("Green")
+        c3.setColor("Brown")
+
+        console.log(c1.toString())
+        console.log(c2.toString())
+        console.log(c3.toString())
+
+        console.log(c1.getArea())
+        console.log(c2.getArea())
+        console.log(c3.getArea())
+
+        console.log(c1.getCircumference())
+        console.log(c2.getCircumference())
+        console.log(c3.getCircumference())
+
+    </script>
+</body>
+</html>

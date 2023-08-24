@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person details</title>
+</head>
+<body>
+    <script>
+        //create person class
+        class person{
+            constructor(name,place,age,degree,course){
+                this.name=name
+                this.place=place
+                this.age=age
+                this.degree=degree
+                this.course=course
+            }
+            getDetails(){
+                console.log(`My name is ${this.name}`)
+                console.log(`I'm from ${this.place}`)
+                console.log(`My age is ${this.age}`)
+                console.log(`I've completed ${this.degree}`)
+                console.log(`I'm doing ${this.course} course`)
+            }
+        }
+        var p=new person("Navaneetha Krishnan", "Tiruneveli", 25, "M.Tech", "Full Stack Development")
+        p.getDetails()
+    </script>
+</body>
+</html>
